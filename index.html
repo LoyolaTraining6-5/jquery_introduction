@@ -1,0 +1,307 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+      <div>
+        <div>
+          <h1>An Introduction To jQuery</h1>
+          <p>Why jQuery?</p>
+          <ul>
+            <li>jQuery is one of the most mature and stable libraries we use on the web</li>
+            <li>It allows us to easily CRUD Dom nodes</li>
+            <li>It's very easy to include, in fact let's go over including it now (if we havne't already)</li>
+          </ul>
+          <p id="toc">Cut the fat, you need to know:</p>
+          <ol>
+            <li>
+              <a href="#one">The $ function</a>
+            </li>
+            <li>
+              <a href="#two">Running methods on jquery objects</a>
+            </li>
+            <li>
+              <a href="#three">The document ready</a>
+            </li>
+            <li>
+              <a href="#four">Selecting elements properly</a>
+            </li>
+            <li>
+              <a href="#five">Hiding and showing a form</a>
+            </li>
+          </ol>
+          <p>Demonstrate Learning:</p>
+          <p>
+            <a href="#exercise">Select 10 elements and do something to them</a>
+          </p>
+        </div>
+        <div id="one">
+          <h2>The $() function</h2>
+          <p>The $() function seems weird right... but remember, it's just a normal function name  like 'getNames()' or 'deleteUser()' would be</p>
+          <p>The reason it's $() is because the authors figured dollar signs wouldn't come up in Javascript code too often</p>
+          <p>$ stands in for jQuery(), that's right, we use $() literally because we don't want to type jQuery() constantly. Hey man, little key strokes add up</p>
+          <p>We utiilze CSS selectors as the first argument to the $() function, and this will find the elments on the page that match the selector</p>
+          <!-- exercise 1 - let's select a box -->
+          <div class="box color-to-change">Color!</div>
+          <!-- exercise 2 - let's select a box by it's id -->
+          <div class="box" id="cool-box">Change!</div>
+          <p>we can use ANY css selector to match </p>
+          <!-- exercise 3 - let's console.log $('.box') to explore it, let us up a new page to see what's up in chromes, let's also just run $('.box') in console and see the difference between logging it and running it  -->
+        </div>
+        <div id="two">
+          <h2>Running methods on jquery objects</h2>
+          <p>As you've kind of seee now, we use basic Javascript . notation to run jQuery methods on objects we select via $()</p>
+          <p>let's visit https://api.jquery.com/ and find some to try</p>
+          <p>Let's chain two jQuery functions onto this box, one will just add a class and the other will put text in</p>
+          <!-- exercise 4 - let's run two functions on a jQuery object -->
+          <div class="box adding-props">Chain!</div>
+        </div>
+        <div id="three">
+          <h2>The document ready</h2>
+          <p>This codepen isn't the best place to talk about the document ready, but we can prep for it.</p>
+          <p>The idea behind the document ready is simple: Wait until the DOM has fully loaded before we start manipulating it with jQuery.</p>
+          <p>Maybe at most, 5% of the jQuery code you'll ever write will live outside of a document ready. </p>
+          <p>Let's take a look at a document ready in the JS section, and we can copy and paste this into our html5boilerplate's JS file and run it locally</p>
+          <!-- exercise 5 - the document ready -->
+        </div>
+        <div id="four">
+          <h2>Selecting elements properly</h2>
+          <p>There's a little known (sadly) but very good best practice to get in the habit of using when selecting DOM elements with jQuery</p>
+          <p>Namespacing your selector, so it only matches when it's within a certain DOM element</p>
+          <p>There are two ways to do this, let's see both, but first some example markup</p>
+          <div class="box-container">
+            <div class="box">Box 1!</div>
+            <div class="box">Box 2!</div>
+          </div>
+          <!-- exercise 6, selecting via child selector -->
+          <!-- exercise 7, selecting via second argument -->
+          <ol class="example-list">
+            <li>only select me...</li>
+            <li>by using...</li>
+            <li>$('li', '.example-list')</li>
+          </ol>
+        </div>
+        <div id="five">
+          <h2>Hiding and showing a form</h2>
+          <p>One thing we use jQuery for is to hide and show DOM elements</p>
+          <p>Let's hide and show a form.</p>
+          <p>We will use .show and .hide to do this!</p>
+          <div class="box-container">
+            <div class="box">Box 1!</div>
+            <div class="box">Box 2!</div>
+          </div>
+          <!-- exercise 8, hide and show this form with .show, .hide -->
+          <form class="form">
+            <h3>Order a classic Cherry Pie!</h3>
+            <label class="label" for="name">
+              Name
+              <input id="name" type="text" />
+            </label>
+            
+            <label class="label" for="email">
+              Email
+              <input id="email" type="email" />
+            </label>
+            
+            <label class="label" for="phone">
+              Phone
+              <input id="phone" type="tel" />
+            </label>
+            
+            <label class="label" for="qty">
+              Quantity
+              <input id="qty" type="numebr" />
+            </label>
+            
+            <input disabled type="submit" value="Order!" />
+          </form>
+        </div>
+        <div id="exercise">
+          <h2>EXERCISE:</h2>
+          <p>Time for an in-class exercise, let's make a 10 elements and do something to them!</p>
+          <p>Requirements:</p>
+          <ol>
+            <li>make 10 DOM elements</li>
+            <li>give each one a unique class name we can hook into</li>
+            <li>write a jQuery manipulation and run it in Javascript</li>
+            <li>all the jQuery code must live in a document ready</li>
+            <li>all the selectors must be written as either a child selector, or with a parent as as second argument</li>
+            <li>Don't EVER use .css to style things, just make a CSS class and add it or remove it as needed!</li>
+          </ol>
+          <p>Hints:</p>
+          <ol>
+            <li>Copy and paste my document ready, you only need one and all 10 functions live inside it</li>
+            <li>Look at the jQuery docs for things you can do</li>
+          </ol>
+        </div>
+      </div>
+      <div>    
+        <div>
+          <h1>jQuery Events</h1>
+          <p>Why Events?</p>
+          <ul>
+            <li>Events are what let jQuery really fly. They are what let your users fully appreciate having Javascript enabled on the page</li>
+            <li>Events allow us to easily manipulate DOM nodes after the user does some interaction, such as hovering, clicking and tabbing into form fields</li>
+            <li>Eventing is pretty simple to implement, as per usual, it just requires one more jQuery function</li>
+          </ul>
+          <p id="toc">Cut the fat, you need to know:</p>
+          <ol>
+            <li>
+              <a href="#six">The .on function</a>
+            </li>
+            <li>
+              <a href="#seven">passing in a function to .on</a>
+            </li>
+            <li>
+              <a href="#eight">passing in arguments to the event handler function</a>
+            </li>
+            <li>
+              <a href="#nine">Accessing the event in your Javascript Code</a>
+            </li>
+            <li>
+              <a href="#ten">'this' vs. $(this)</a>
+            </li>
+            <li>
+              <a href="#eleven">Making sure you target elements properly</a>
+            </li>
+            <li>
+              <a href="#twelve">Summing up the dot on function</a>
+            </li>
+          </ol>
+          <p>Demonstrate Learning:</p>
+          <p>
+            <a href="#exercise">Make a list where clicking on an li tag triggers an event. Then manually add an li to the DOM via web inspector and make sure that new li too has the event attached</a>
+          </p>
+        </div>
+        <div id="six">
+        <h2>The .on function</h2>
+        <p>There are many jquery functions that allow us to set up eventing in our site, but .on is pretty much the main one. </p>
+        <p>Be careful! Over time this might change, in older versions of jQuery we used event names like .click and stuff</p>
+        <p>This functions is VERY ROBUST, it can have a lot of options, but to get started we'll just do basic implementations, but realize that it allows pretty fine grained control over eventing.</p>
+        <!-- exampe 1 - click on a box -->
+        <div class="box boxExample1">Ex 1</div>
+        <p>This box just has one event attached, on click we change its text</p>
+        <!-- exampel 2- hover over a box requires two events -->
+        <div class="box boxExample2">Ex 2</div>
+        <p>This box has two events attched, one for mouseenter and another for mouseleave, if both are on it, we get the behavior of the pseudo class :hover.</p>
+      </div>
+        <div id="seven">
+        <h2>passing in a function to .on</h2>
+        <p>If we really think about what we're doing, we'll quickly realize that all we're doing is passing in two arguments to .on</p>
+        <p>argument 1 is a string of the event name, right now we choose from a list of pre-defined events by jQuery</p>
+        <p>arugment 2 is a function, basically the thing we want to do when the event happens.</p>
+        <p>to me it makes total sense that you'd pass in a function here, what other javascript data type is more suitable? (answer: none!)</p>
+        <p>But let's make it more explicit that we're passing in a function, let's write this a bit cleaner</p>
+        <!-- example 3 - an event coded more cleanly -->
+        <div class="box boxExample3">Ex 3</div>
+        <p>It's important to realize one thing here...</p>
+        <p><em> I DID NOTHTING BUT REORGANIZE THIS CODE!</em></p>
+        <p>It's just cleaner to read now, it's less confusing, and there's less of a cluster of curly braces now.</p>
+        <p>We more cleanly realize that on 'dblclick' just run this function</p>
+        <!-- example 4 - an issue with arguments -->
+        <div class="box boxExample4">Won't Work</div>
+        <p>We have one issue though, with these functions, both in this cleaner syntax and in the other messier syntax. We can't really pass in arguments, which is a big central feature of functions!</p>
+        <p>Let's try with both versions and prove that it won't work!</p>
+        <p>The anonymous function route is even more confusing! we never defined an argument for the function, so int he body we have no way of referencing the argument. When we un-comment the code, it throws an error</p>
+      </div>
+      <div id="eight">
+        <h2>Passing in arguments to the event handler function</h2>
+        <p>There are a few ways around this issue of not being able to pass in functions, but I just want to show you the best one.</p>
+        <!-- example 5 - passing in arguments via a new argument to .on -->
+        <div class="box boxExample5">Ex 5</div>
+        <p>the .on function actually takes more arguments than just these two, and one of them is a data object</p>
+        <p>This is an object who's data we can access inside our event function</p>
+        <p>But we don't access it explicitly, instead it's inside another argument to the function called 'event'</p>
+        <p>What is event? Let's explore this!</p>
+      </div>
+        <div id="nine">
+        <h2>Accessing the event in your Javascript Code</h2>
+        <p>We've seen now that we can't actually pass in arguments to the event handler function we define...</p>
+        <p>but just above we used this argument called the 'the_click_event'</p>
+        <p>first off, it's convention to call it just 'event', so we'll do that from now on</p>
+        <p>but it's actually a very valuable thing</p>
+        <p>Soemtimes we want to know stuff about the event, such as:</p>
+        <p>The mouse's x/y coordinates of the click and other good stuff.</p>
+        <p>Let's make an object that has a 'click' event handler and in that function, let's console.log(event) and explore it</p>
+        <!-- example 6 - console.log(event) -->
+        <div class="box boxExample6">event!</div>
+        <p>the event is given to us by jQuery automatically, we get it just by providing it as an argument to our function</p>
+        <p>this can be a little tricky because unlike normal arguments, we tell our function definition there will be an argument called 'event', but we on the 'click' handler we never give it an argument</p>
+        <p>This has to do with some Javascript internals about how whether the function is defined or refernced. Let's not focus on it! Just realize this is kind of a quirk to work with!</p>
+        <!-- example 7 - Let's log some of the good stuff from the event -->
+        <div class="boxExample7">ex 7...</div>
+        <p>Personally, I think this is better than just standard arguments!</p>
+        <p>We can pass in any data we need via the data object... and then we get all this other good stuff!</p>
+      </div>
+        <div id="ten">
+        <h2>'this' vs. $(this)</h2>
+        <p>Let's take a moment to review one other thing in our functions...</p>
+        <p>instead of using the jQuery selector directly, we reference it via $(this) in our code.</p>
+        <p>let's make a function that logs both $(this) and just 'this'.</p>
+        <p>click the box below and view the box in web inspector to see what we get</p>
+        <div class="box boxExample8">THIS!</div>
+        <p>what we see is that 'this' alone, without the $ is just hte DOM node we've targeted via jQuery</p>
+        <p>but $(this) is the DOM node as a jQuery object</p>
+        <p>finally, we compare it to console.log($('.boxExample8')) and we see that it has slightly more information</p>
+        <p>we want to use this because likely, we want to use more jQuery methods on the element.</p>
+        <p>But if we don't want to, we just want do some calculations or something, we don't need $(this), we only use $(this) when we want to do more jQuery manipulations on the original object</p>
+      </div>
+        <div id="eleven">
+        <h2>Making sure you target elements properly</h2>
+        <p>Finally, let's dial it back a bit and make sure we select elements properly</p>
+        <p>For this example let's make a list</p>
+        <!-- example 9 - targeting properly -->
+        <ul class="example-list">
+          <li class="example-list-item">Hi I'm item #1!</li>
+          <li class="example-list-item">Hi I'm item #2 I'm cool too!</li>
+          <li class="example-list-item">What up I'm slacker item #3!</li>
+        </ul>
+        <p>First let's attach an event listener to the list, on click each list item should turn red.</p>
+        <p>We might (erroneously) begin by targeting it in the first way (see the JS)</p>
+        <p>But this way has a problem! Open up the page in debug mode and in web inspector, add a new list item with the same class</p>
+        <p>No matter how much we click that one, it won't turn red!</p>
+        <p>This is because <em>click handlers are attached when the page loads, and this node was added after the page loads so it has no handler attached!!</em></p>
+        <p>So let's show a second, better click handler definition to account for this!</p>
+        <p>This is called <em> Event Delegation </em> it's an important concept, but the tl;dr read of it is:</p>
+        <blockquote>If you know the element you want to attach an event too might end up having more of it's kind put on the page via Javasript, then attach the event to it's parent, and then in the dot on function, specify what child of the parent must be clicked for the event to run</blockquote>
+      </div>
+        <div id="twelve">
+        <h2>Summing up the dot on</h2>
+        <p>if we look now, we've used every input the dot on function has in its documentation</p>
+        <blockquote>
+          <code>.on("event", "child selector this must be clicked/hovered/etc for event to run (this is optional)", {"event.data" : "this is also optional"}, theFunctionToRun);</code>
+        </blockquote>
+      </div>
+        <div id="exercise">
+        <h2>EXERCISE:</h2>
+        <p>Time for an in-class exercise, let's make a 10 elements and do something to them!</p>
+        <p>Requirements:</p>
+        <ol>
+          <li>make 10 DOM elements</li>
+          <li>give each one a unique class name we can hook into</li>
+          <li>write a jQuery manipulation and run it in Javascript</li>
+          <li>all the jQuery code must live in a document ready</li>
+          <li>all the selectors must be written as either a child selector, or with a parent as as second argument</li>
+          <li>Don't EVER use .css to style things, just make a CSS class and add it or remove it as needed!</li>
+        </ol>
+        <p>Hints:</p>
+        <ol>
+          <li>Copy and paste my document ready, you only need one and all 10 functions live inside it</li>
+          <li>Look at the jQuery docs for things you can do</li>
+        </ol>
+      </div>
+      </div>
+
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
+        <script src="js/jQuery1.js"></script>
+        <script src="js/jQuery2.js"></script>
+    </body>
+</html>

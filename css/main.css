@@ -1,0 +1,163 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body { 
+  font-family: Helvetica, Arial, sans-serif; 
+  font-weight: 200; 
+  letter-spacing: 1px; 
+  color: #666;
+  margin: 0;
+  padding: 20px;
+  margin-bottom: 100px;
+}
+h1, h2 { 
+  font-weight: 400;
+}
+a { 
+  color: #333; 
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+} 
+a:hover { color: #65ADF5;}
+
+
+#intro-block { width: 75%; margin: 0 20px; }
+.box { 
+  width: 100px; 
+  height: 100px; 
+  line-height:100px; 
+  background-color: #65ADF5; 
+  border-radius:5px; 
+  text-align: center; 
+  padding: 15px;
+}
+.styledbox { 
+  background-color: #65ADF5; 
+  border-radius:5px; 
+  text-align: center; 
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.box-container { 
+  border: 1px solid #D8CFF4; 
+}
+.form {
+  width: 300px;
+  border: 1px solid #eee;
+  padding: 20px;
+  margin: 20px 0
+}
+.label {
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* intro jQuery lesson */
+
+/* exercise 3 - a class we'll add */ 
+.two-chained-functions
+  width: 200px
+  color: white
+  
+/* exercise 7 - red text class */
+.red-text
+  color: red
+  
+/* jQuery events lesson */
+.boxExample6
+  line-height: 20px
