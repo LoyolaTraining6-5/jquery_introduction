@@ -1,6 +1,11 @@
+// 1. Add a document ready
 $(document).ready(function() {
+  // 2. Add an event on the submit of the form
   $('#credit-card-form').on('submit', function(e) {
+    // 3. Since form submit's refresh the page, preventDefault
     e.preventDefault();
+    
+    // 4. Get every <input /> tag you want to validate
     var url, result;
     var $firstName = $('#first-name');
     var $lastName = $('#last-name');
@@ -8,12 +13,14 @@ $(document).ready(function() {
     var $occupation = $('#occupation');
     var $creditRating = $('#credit-rating');
     
+    // 5. Get the value of each <input /> with jQuery's .val() function
     var firstName = $firstName.val();
     var lastName = $lastName.val();
     var email = $email.val();
     var occupation = $occupation.val();
     var creditRating = $creditRating.val();
     
+    // 6. Check each text value one by one, yes this tedious!
     var errors = [];
     if (stringIsValid(firstName) === false) {
       errors.push('FIRST NAME');
@@ -32,10 +39,14 @@ $(document).ready(function() {
       errors.push('CREDIT RATING');
     }
     
+    // 7. If we have even one error, let's show our errors then RETURN
     if (errors.length > 0) {
       showFormErrors(errors);
       return;
     }
+    
+    // 8. If we don't have errors, hide the erros block, then let's
+    //    send our request!
     hideFormErrors();
     url = 'www.FrankCard.com/apply?' +
       'firstName=' + firstName + 
@@ -44,6 +55,9 @@ $(document).ready(function() {
       '&occupation=' + occupation +
       '&creditRating=' + creditRating;
     result = sendRequest(url);
+    
+    // 9. Depending on if we get an error or success, let's 
+    //    show the appropriate markup
     if (result.response === 'ERROR') {
       showServerError();
     }
