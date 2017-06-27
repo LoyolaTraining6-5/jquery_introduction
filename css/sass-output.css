@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+html, body {
+  font-family: 'Fira Sans', sans-serif; }
+
+.credit-card-form input[type=text] {
+  color: blue; }
+
+.credit-card-form input[type=email] {
+  color: red; }
+
+.credit-card-form input[type=number] {
+  color: purple; }
+
+.credit-card-form input[type=submit] {
+  color: green; }

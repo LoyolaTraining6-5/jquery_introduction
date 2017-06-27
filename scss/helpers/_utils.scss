@@ -1,0 +1,67 @@
+// styles for common patterns like .isVisuallyHidden and common mixins like clearfix
+
+.hidden {
+  // some css to hide an element  
+}
+
+// 1. A clearfix mixin
+
+
+// 2. A visuall hidden mixin
+
+// @mixin isVisuallyHidden() {
+//     width: 1px;
+//     height: 1px;
+//     margin: -1px;
+//     padding: 0;
+//     border: 0;
+//     position: absolute;
+//     clip: rect(0 0 0 0);
+//     overflow: hidden;
+// }
+
+// 3. A transition mixin
+
+// @mixin transition($args...) {
+//   -webkit-transition: $args;
+//   -moz-transition: $args;
+//   -ms-transition: $args;
+//   -o-transition: $args;
+//   transition: $args;
+// }
+
+// USAGE:
+// .user-profile {
+//   color: blue;
+//   @include transition(color .3s ease);
+// }
+
+// 4. Write some media query breakpoints
+
+// @mixin bp-large {
+//   @media only screen and (max-width: 60em) {
+//     @content;
+//   }
+// }
+// 
+// @mixin bp-medium {
+//   @media only screen and (max-width: 40em) {
+//     @content;
+//   }
+// }
+// 
+// @mixin bp-small {
+//   @media only screen and (max-width: 30em) {
+//     @content;
+//   }
+// }
+
+// USAGE:
+// .example {
+//   float: left;
+//   width: 50%;
+//   @include bp-small {
+//     width: 100%;
+//     float: none;
+//   }
+// }

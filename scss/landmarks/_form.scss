@@ -1,0 +1,17 @@
+.credit-card-form {
+  label {
+    // some code to make them block elements
+  }
+  input[type=text] {
+    color: blue;
+  }
+  input[type=email] {
+    color: red;
+  }
+  input[type=number] {
+    color: purple;
+  }
+  input[type=submit] {
+    color: green;
+  }
+}
