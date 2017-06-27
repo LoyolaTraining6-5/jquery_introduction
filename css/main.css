@@ -146,6 +146,9 @@ a:hover { color: #65ADF5;}
   display: block;
   margin-bottom: 20px;
 }
+.hidden {
+  display: none;
+}
 
 /* intro jQuery lesson */
 
